@@ -5,7 +5,7 @@ import sys
 
 import pytest
 
-from calculator import evaluate
+from calculator import __version__, evaluate
 from calculator.__main__ import main
 
 
@@ -49,3 +49,8 @@ def test_cli_subprocess():
         check=True,
     )
     assert result.stdout.strip() == "4"
+
+
+def test_main_usage_shows_version(capsys):
+    assert main([]) == 2
+    assert __version__ in capsys.readouterr().err
