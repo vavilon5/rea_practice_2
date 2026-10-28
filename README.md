@@ -22,3 +22,4 @@ pytest
 
 - Руководство: [docs/usage.md](docs/usage.md), процесс CI/CD: [docs/ci-cd.md](docs/ci-cd.md)
 - API-документация генерируется `pdoc` в CI и публикуется в ветку `gh-pages`.
+- Отчёт по практической работе: [docs/REPORT.md](docs/REPORT.md)
