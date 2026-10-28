@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install flake8
+      - name: flake8
+        run: flake8 src tests --max-line-length 100
+
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+      - name: Install dependencies
+        run: pip install -e . -r requirements-dev.txt
+      - name: Unit and integration tests
+        run: pytest --cov=calculator --cov-report=term-missing
+
+  # Автоматическое слияние PR из development в main после успешных тестов
+  automerge:
+    if: github.event_name == 'pull_request' && github.head_ref == 'development' && github.event.pull_request.head.repo.full_name == github.repository
+    needs: [lint, test]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      actions: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - name: Merge pull request
+        run: gh pr merge ${{ github.event.pull_request.number }} --merge
+      # Пуш от GITHUB_TOKEN не запускает новые workflow, поэтому запускаем CI и документацию на main явно
+      - name: Run CI and docs on main
+        run: |
+          gh workflow run main.yml --ref main
+          gh workflow run docs.yml --ref main
