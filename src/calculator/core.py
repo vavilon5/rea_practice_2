@@ -27,3 +27,19 @@ def divide(a: Number, b: Number) -> float:
     if b == 0:
         raise ZeroDivisionError("Деление на ноль невозможно")
     return a / b
+
+
+def power(a: Number, b: Number) -> Number:
+    """Возвращает ``a`` в степени ``b``."""
+    return a**b
+
+
+def modulo(a: Number, b: Number) -> Number:
+    """Возвращает остаток от деления ``a`` на ``b``.
+
+    Raises:
+        ZeroDivisionError: если ``b`` равно нулю.
+    """
+    if b == 0:
+        raise ZeroDivisionError("Деление на ноль невозможно")
+    return a % b

@@ -1,12 +1,14 @@
 """Вычисление простых выражений вида ``"<число> <оператор> <число>"``."""
 
-from calculator.core import Number, add, divide, multiply, subtract
+from calculator.core import Number, add, divide, modulo, multiply, power, subtract
 
 OPERATIONS = {
     "+": add,
     "-": subtract,
     "*": multiply,
     "/": divide,
+    "%": modulo,
+    "^": power,
 }
 
 
