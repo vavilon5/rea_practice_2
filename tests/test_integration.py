@@ -11,13 +11,21 @@ from calculator.__main__ import main
 
 @pytest.mark.parametrize(
     ("expression", "expected"),
-    [("2 + 3", 5), ("10 - 4", 6), ("3 * 7", 21), ("8 / 2", 4.0), ("1.5 + 1", 2.5)],
+    [
+        ("2 + 3", 5),
+        ("10 - 4", 6),
+        ("3 * 7", 21),
+        ("8 / 2", 4.0),
+        ("1.5 + 1", 2.5),
+        ("2 ^ 3", 8),
+        ("7 % 4", 3),
+    ],
 )
 def test_evaluate(expression, expected):
     assert evaluate(expression) == expected
 
 
-@pytest.mark.parametrize("expression", ["2 +", "2 ^ 3", "a + b"])
+@pytest.mark.parametrize("expression", ["2 +", "2 & 3", "a + b"])
 def test_evaluate_invalid(expression):
     with pytest.raises(ValueError):
         evaluate(expression)

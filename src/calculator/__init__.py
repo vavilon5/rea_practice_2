@@ -4,9 +4,9 @@
 вычислитель выражений вида ``"2 + 3"``.
 """
 
-from calculator.core import add, divide, multiply, subtract
+from calculator.core import add, divide, modulo, multiply, power, subtract
 from calculator.expression import evaluate
 
 __version__ = "1.0.0"
 
-__all__ = ["add", "subtract", "multiply", "divide", "evaluate", "__version__"]
+__all__ = ["add", "subtract", "multiply", "divide", "power", "modulo", "evaluate", "__version__"]
