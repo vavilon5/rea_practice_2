@@ -36,6 +36,12 @@
                     <a class="function" href="#divide">divide</a>
             </li>
             <li>
+                    <a class="function" href="#power">power</a>
+            </li>
+            <li>
+                    <a class="function" href="#modulo">modulo</a>
+            </li>
+            <li>
                     <a class="function" href="#evaluate">evaluate</a>
             </li>
             <li>
@@ -73,12 +79,12 @@ calculator    </h1>
 </span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a><span class="sd">вычислитель выражений вида ``"2 + 3"``.</span>
 </span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a><span class="sd">"""</span>
 </span><span id="L-6"><a href="#L-6"><span class="linenos"> 6</span></a>
-</span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">calculator.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">add</span><span class="p">,</span> <span class="n">divide</span><span class="p">,</span> <span class="n">multiply</span><span class="p">,</span> <span class="n">subtract</span>
+</span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">calculator.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">add</span><span class="p">,</span> <span class="n">divide</span><span class="p">,</span> <span class="n">modulo</span><span class="p">,</span> <span class="n">multiply</span><span class="p">,</span> <span class="n">power</span><span class="p">,</span> <span class="n">subtract</span>
 </span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">calculator.expression</span><span class="w"> </span><span class="kn">import</span> <span class="n">evaluate</span>
 </span><span id="L-9"><a href="#L-9"><span class="linenos"> 9</span></a>
 </span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a><span class="n">__version__</span> <span class="o">=</span> <span class="s2">"1.0.0"</span>
 </span><span id="L-11"><a href="#L-11"><span class="linenos">11</span></a>
-</span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"add"</span><span class="p">,</span> <span class="s2">"subtract"</span><span class="p">,</span> <span class="s2">"multiply"</span><span class="p">,</span> <span class="s2">"divide"</span><span class="p">,</span> <span class="s2">"evaluate"</span><span class="p">,</span> <span class="s2">"__version__"</span><span class="p">]</span>
+</span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"add"</span><span class="p">,</span> <span class="s2">"subtract"</span><span class="p">,</span> <span class="s2">"multiply"</span><span class="p">,</span> <span class="s2">"divide"</span><span class="p">,</span> <span class="s2">"power"</span><span class="p">,</span> <span class="s2">"modulo"</span><span class="p">,</span> <span class="s2">"evaluate"</span><span class="p">,</span> <span class="s2">"__version__"</span><span class="p">]</span>
 </span></pre></div>
 
 
@@ -180,6 +186,59 @@ calculator    </h1>
 
 
                 </section>
+                <section id="power">
+                            <input id="power-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">power</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">a</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span>, </span><span class="param"><span class="n">b</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span></span><span class="return-annotation">) -> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span>:</span></span>
+
+                <label class="view-source-button" for="power-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#power"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="power-33"><a href="#power-33"><span class="linenos">33</span></a><span class="k">def</span><span class="w"> </span><span class="nf">power</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Number</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">Number</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Number</span><span class="p">:</span>
+</span><span id="power-34"><a href="#power-34"><span class="linenos">34</span></a><span class="w">    </span><span class="sd">"""Возвращает ``a`` в степени ``b``."""</span>
+</span><span id="power-35"><a href="#power-35"><span class="linenos">35</span></a>    <span class="k">return</span> <span class="n">a</span><span class="o">**</span><span class="n">b</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Возвращает <code>a</code> в степени <code>b</code>.</p>
+</div>
+
+
+                </section>
+                <section id="modulo">
+                            <input id="modulo-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+            
+        <span class="def">def</span>
+        <span class="name">modulo</span><span class="signature pdoc-code condensed">(<span class="param"><span class="n">a</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span>, </span><span class="param"><span class="n">b</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span></span><span class="return-annotation">) -> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span>:</span></span>
+
+                <label class="view-source-button" for="modulo-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#modulo"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="modulo-38"><a href="#modulo-38"><span class="linenos">38</span></a><span class="k">def</span><span class="w"> </span><span class="nf">modulo</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Number</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">Number</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Number</span><span class="p">:</span>
+</span><span id="modulo-39"><a href="#modulo-39"><span class="linenos">39</span></a><span class="w">    </span><span class="sd">"""Возвращает остаток от деления ``a`` на ``b``.</span>
+</span><span id="modulo-40"><a href="#modulo-40"><span class="linenos">40</span></a>
+</span><span id="modulo-41"><a href="#modulo-41"><span class="linenos">41</span></a><span class="sd">    Raises:</span>
+</span><span id="modulo-42"><a href="#modulo-42"><span class="linenos">42</span></a><span class="sd">        ZeroDivisionError: если ``b`` равно нулю.</span>
+</span><span id="modulo-43"><a href="#modulo-43"><span class="linenos">43</span></a><span class="sd">    """</span>
+</span><span id="modulo-44"><a href="#modulo-44"><span class="linenos">44</span></a>    <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="modulo-45"><a href="#modulo-45"><span class="linenos">45</span></a>        <span class="k">raise</span> <span class="ne">ZeroDivisionError</span><span class="p">(</span><span class="s2">"Деление на ноль невозможно"</span><span class="p">)</span>
+</span><span id="modulo-46"><a href="#modulo-46"><span class="linenos">46</span></a>    <span class="k">return</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Возвращает остаток от деления <code>a</code> на <code>b</code>.</p>
+
+<p>Raises:
+    ZeroDivisionError: если <code>b</code> равно нулю.</p>
+</div>
+
+
+                </section>
                 <section id="evaluate">
                             <input id="evaluate-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr function">
@@ -191,22 +250,22 @@ calculator    </h1>
 
     </div>
     <a class="headerlink" href="#evaluate"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="evaluate-21"><a href="#evaluate-21"><span class="linenos">21</span></a><span class="k">def</span><span class="w"> </span><span class="nf">evaluate</span><span class="p">(</span><span class="n">expression</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Number</span><span class="p">:</span>
-</span><span id="evaluate-22"><a href="#evaluate-22"><span class="linenos">22</span></a><span class="w">    </span><span class="sd">"""Вычисляет выражение из двух операндов и одного оператора.</span>
-</span><span id="evaluate-23"><a href="#evaluate-23"><span class="linenos">23</span></a>
-</span><span id="evaluate-24"><a href="#evaluate-24"><span class="linenos">24</span></a><span class="sd">    &gt;&gt;&gt; evaluate("2 + 3")</span>
-</span><span id="evaluate-25"><a href="#evaluate-25"><span class="linenos">25</span></a><span class="sd">    5</span>
-</span><span id="evaluate-26"><a href="#evaluate-26"><span class="linenos">26</span></a>
-</span><span id="evaluate-27"><a href="#evaluate-27"><span class="linenos">27</span></a><span class="sd">    Raises:</span>
-</span><span id="evaluate-28"><a href="#evaluate-28"><span class="linenos">28</span></a><span class="sd">        ValueError: если выражение имеет неверный формат или оператор.</span>
-</span><span id="evaluate-29"><a href="#evaluate-29"><span class="linenos">29</span></a><span class="sd">    """</span>
-</span><span id="evaluate-30"><a href="#evaluate-30"><span class="linenos">30</span></a>    <span class="n">parts</span> <span class="o">=</span> <span class="n">expression</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-</span><span id="evaluate-31"><a href="#evaluate-31"><span class="linenos">31</span></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
-</span><span id="evaluate-32"><a href="#evaluate-32"><span class="linenos">32</span></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Неверный формат выражения: </span><span class="si">{</span><span class="n">expression</span><span class="si">!r}</span><span class="s2">"</span><span class="p">)</span>
-</span><span id="evaluate-33"><a href="#evaluate-33"><span class="linenos">33</span></a>    <span class="n">left</span><span class="p">,</span> <span class="n">op</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">parts</span>
-</span><span id="evaluate-34"><a href="#evaluate-34"><span class="linenos">34</span></a>    <span class="k">if</span> <span class="n">op</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">OPERATIONS</span><span class="p">:</span>
-</span><span id="evaluate-35"><a href="#evaluate-35"><span class="linenos">35</span></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Неизвестный оператор: </span><span class="si">{</span><span class="n">op</span><span class="si">!r}</span><span class="s2">"</span><span class="p">)</span>
-</span><span id="evaluate-36"><a href="#evaluate-36"><span class="linenos">36</span></a>    <span class="k">return</span> <span class="n">OPERATIONS</span><span class="p">[</span><span class="n">op</span><span class="p">](</span><span class="n">_parse_number</span><span class="p">(</span><span class="n">left</span><span class="p">),</span> <span class="n">_parse_number</span><span class="p">(</span><span class="n">right</span><span class="p">))</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="evaluate-23"><a href="#evaluate-23"><span class="linenos">23</span></a><span class="k">def</span><span class="w"> </span><span class="nf">evaluate</span><span class="p">(</span><span class="n">expression</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Number</span><span class="p">:</span>
+</span><span id="evaluate-24"><a href="#evaluate-24"><span class="linenos">24</span></a><span class="w">    </span><span class="sd">"""Вычисляет выражение из двух операндов и одного оператора.</span>
+</span><span id="evaluate-25"><a href="#evaluate-25"><span class="linenos">25</span></a>
+</span><span id="evaluate-26"><a href="#evaluate-26"><span class="linenos">26</span></a><span class="sd">    &gt;&gt;&gt; evaluate("2 + 3")</span>
+</span><span id="evaluate-27"><a href="#evaluate-27"><span class="linenos">27</span></a><span class="sd">    5</span>
+</span><span id="evaluate-28"><a href="#evaluate-28"><span class="linenos">28</span></a>
+</span><span id="evaluate-29"><a href="#evaluate-29"><span class="linenos">29</span></a><span class="sd">    Raises:</span>
+</span><span id="evaluate-30"><a href="#evaluate-30"><span class="linenos">30</span></a><span class="sd">        ValueError: если выражение имеет неверный формат или оператор.</span>
+</span><span id="evaluate-31"><a href="#evaluate-31"><span class="linenos">31</span></a><span class="sd">    """</span>
+</span><span id="evaluate-32"><a href="#evaluate-32"><span class="linenos">32</span></a>    <span class="n">parts</span> <span class="o">=</span> <span class="n">expression</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</span><span id="evaluate-33"><a href="#evaluate-33"><span class="linenos">33</span></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+</span><span id="evaluate-34"><a href="#evaluate-34"><span class="linenos">34</span></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Неверный формат выражения: </span><span class="si">{</span><span class="n">expression</span><span class="si">!r}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="evaluate-35"><a href="#evaluate-35"><span class="linenos">35</span></a>    <span class="n">left</span><span class="p">,</span> <span class="n">op</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">parts</span>
+</span><span id="evaluate-36"><a href="#evaluate-36"><span class="linenos">36</span></a>    <span class="k">if</span> <span class="n">op</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">OPERATIONS</span><span class="p">:</span>
+</span><span id="evaluate-37"><a href="#evaluate-37"><span class="linenos">37</span></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Неизвестный оператор: </span><span class="si">{</span><span class="n">op</span><span class="si">!r}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="evaluate-38"><a href="#evaluate-38"><span class="linenos">38</span></a>    <span class="k">return</span> <span class="n">OPERATIONS</span><span class="p">[</span><span class="n">op</span><span class="p">](</span><span class="n">_parse_number</span><span class="p">(</span><span class="n">left</span><span class="p">),</span> <span class="n">_parse_number</span><span class="p">(</span><span class="n">right</span><span class="p">))</span>
 </span></pre></div>
 
 
